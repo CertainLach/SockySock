@@ -58,7 +58,6 @@ if(typeof process !== 'undefined' && process.env.F6CF_TEST){
     class SockySock{
         constructor(options, ...wtf){
             // Validation
-            //BUILD CUT START
             // Because good users need to use it propper way :D
             if(!options)
                 throw new Error('No options passed!');
@@ -80,7 +79,6 @@ if(typeof process !== 'undefined' && process.env.F6CF_TEST){
             if(options.callbackTimeout&&options.callbackTimeout<0){
                 throw new Error('Callback timeout must be >= 0!')
             }
-            //BUILD CUT END
             for(let optionName in DEFAULT_OPTIONS){
                 if(!DEFAULT_OPTIONS.hasOwnProperty(optionName))
                     continue;
