@@ -58,6 +58,8 @@ if(typeof process !== 'undefined' && process.env.F6CF_TEST){
     class SockySock{
         constructor(options, ...wtf){
             // Validation
+            //BUILD CUT START
+            // Because good users need to use it propper way :D
             if(!options)
                 throw new Error('No options passed!');
             if(typeof options !== 'object')
@@ -78,6 +80,7 @@ if(typeof process !== 'undefined' && process.env.F6CF_TEST){
             if(options.callbackTimeout&&options.callbackTimeout<0){
                 throw new Error('Callback timeout must be >= 0!')
             }
+            //BUILD CUT END
             for(let optionName in DEFAULT_OPTIONS){
                 if(!DEFAULT_OPTIONS.hasOwnProperty(optionName))
                     continue;
@@ -111,7 +114,9 @@ if(typeof process !== 'undefined' && process.env.F6CF_TEST){
             console.log(objData);
             let type=objData.type;
             if(!this.handlers[type]){
+                //BUILD CUT START
                 console.log('No handlers for type '+type);
+                //BUILD CUT END
                 return;
             }
             let outParams=[];
